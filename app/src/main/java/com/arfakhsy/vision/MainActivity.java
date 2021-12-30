@@ -12,15 +12,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import com.arfakhsy.vision.ml.Model;
 import com.google.android.material.button.MaterialButton;
-import org.tensorflow.lite.DataType;
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Objects;
+
+import org.tensorflow.lite.DataType;
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+
+import com.arfakhsy.vision.ml.Model; // pre-trained model - E.g: Cat and dog model lite
 
 public class MainActivity extends AppCompatActivity {
 
@@ -108,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             // Releases model resources if no longer used.
             model.close();
         } catch (IOException e) {
-            // TODO Handle the exception34r
+            // TODO Handle the exception
             Log.e(TAG, "No image classify detected");
         }
     }
